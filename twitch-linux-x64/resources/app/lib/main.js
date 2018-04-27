@@ -6427,13 +6427,13 @@ function createMenu(_ref) {
     label: 'View',
     submenu: [{
       label: 'Back',
-      accelerator: 'Alt+Left',
+      accelerator: 'CmdOrCtrl+[',
       click: function click() {
         goBack();
       }
     }, {
       label: 'Forward',
-      accelerator: 'Alt+Right',
+      accelerator: 'CmdOrCtrl+]',
       click: function click() {
         goForward();
       }
@@ -6530,7 +6530,7 @@ function createMenu(_ref) {
     }, {
       label: 'Report an Issue',
       click: function click() {
-        _electron.shell.openExternal('https://github.com/simoniz0r/twitch-wrapper/issues');
+        _electron.shell.openExternal('https://github.com/jiahaog/nativefier/issues');
       }
     }]
   }];
@@ -6602,28 +6602,6 @@ var _electron = __webpack_require__(2);
 function initContextMenu(mainWindow) {
   _electron.ipcMain.on('contextMenuOpened', function (event, targetHref) {
     var contextMenuTemplate = [{
-      label: 'Home',
-      click: function click() {
-        mainWindow.loadURL('https://twitch.tv/directory/following/live');
-      }
-    }, {
-      label: 'Back',
-      click: function click() {
-        mainWindow.webContents.goBack();
-      }
-    }, {
-      label: 'Forward',
-      click: function click() {
-        mainWindow.webContents.goForward();
-      }
-    }, {
-      label: 'Reload',
-      click: function click(item, focusedWindow) {
-        if (focusedWindow) {
-          focusedWindow.reload();
-        }
-      }
-    }, {
       label: 'Open with default browser',
       click: function click() {
         if (targetHref) {
