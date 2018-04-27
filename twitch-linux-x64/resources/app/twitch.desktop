@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Twitch
+Comment=An Electron wrapper for Twitch.tv
+Exec=twitch-wrapper
+Icon=twitch-wrapper
+Categories=Network;
