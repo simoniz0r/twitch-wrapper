@@ -1,0 +1,50 @@
+{
+    "buildinfo": [
+    {
+        "prerun": [
+            "mkdir -p ~/.cache/deb2appimage/AppDir",
+            "cd ~/.cache/deb2appimage/AppDir",
+            "nativefier https://twitch.tv/directory/following --name twitch-electron -e 4.1.4 --inject /run/media/simonizor/USBHDD/nativefier/ffz.js"
+        ],
+        "name": "twitch-electron",
+        "version": "0.0.21",
+        "deps": null,
+        "repoarch": null,
+        "distrorepo": null,
+        "repoversion": null,
+        "binarypath": "/twitch-electron-linux-x64/twitch-electron",
+        "desktoppath": null,
+        "iconpath": "/twitch-electron-linux-x64/resources/app/icon.png",
+        "usewrapper": "true",
+        "postrun": [
+            null
+        ]
+    }
+    ],
+    "apprunconf": [
+    {
+        "setpath": "false",
+        "setlibpath": "false",
+        "setpythonpath": "false",
+        "setpythonhome": "false",
+        "setpythondontwritebytecode": "false",
+        "setxdgdatadirs": "false",
+        "setperllib": "false",
+        "setgsettingsschemadir": "false",
+        "setqtpluginpath": "false",
+        "exec": "/twitch-electron-linux-x64/twitch-electron.wrapper"
+    }
+    ],
+    "authors": [
+    {
+        "type": "Author",
+        "author": "Twitch",
+        "url": "https://twitch.tv"
+    },
+    {
+        "type": "AppImage Maintainer",
+        "author": "simonizor",
+        "url": "http://www.simonizor.net"
+    }
+    ]
+}
