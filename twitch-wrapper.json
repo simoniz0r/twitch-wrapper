@@ -4,17 +4,18 @@
         "prerun": [
             "mkdir -p ~/.cache/deb2appimage/AppDir",
             "cd ~/.cache/deb2appimage/AppDir",
-            "nativefier https://twitch.tv/directory/following --name twitch-electron -e 4.1.4 --inject /run/media/simonizor/USBHDD/nativefier/ffz.js"
+            "export LATEST_STABLE_ELECTRON=\"$(curl -sL \"https://electronjs.org/releases/stable\" | grep -m1 '<h2 class=\"release-entry\" id=\"' | cut -f4 -d'\"')\"",
+            "nativefier https://www.twitch.tv/directory/following/live --name twitch-desktop -e $LATEST_STABLE_ELECTRON --inject ~/github/twitch-wrapper/ffz.js --icon ~/github/twitch-wrapper/twitch.png"
         ],
-        "name": "twitch-electron",
-        "version": "0.0.21",
+        "name": "twitch-wrapper",
+        "version": "0.0.3",
         "deps": null,
         "repoarch": null,
         "distrorepo": null,
         "repoversion": null,
-        "binarypath": "/twitch-electron-linux-x64/twitch-electron",
+        "binarypath": "/twitch-desktop-linux-x64/twitch-desktop",
         "desktoppath": null,
-        "iconpath": "/twitch-electron-linux-x64/resources/app/icon.png",
+        "iconpath": "/twitch-desktop-linux-x64/resources/app/icon.png",
         "usewrapper": "true",
         "postrun": [
             null
@@ -32,7 +33,7 @@
         "setperllib": "false",
         "setgsettingsschemadir": "false",
         "setqtpluginpath": "false",
-        "exec": "/twitch-electron-linux-x64/twitch-electron.wrapper"
+        "exec": "/twitch-desktop-linux-x64/twitch-desktop.wrapper"
     }
     ],
     "authors": [
